@@ -1,0 +1,226 @@
+
+/* 테마: 미니멀 & 포근함 (Minimal & Cozy) */
+
+:root {
+    /* 색상 팔레트 - 부드럽고 따뜻하게 */
+    --primary-color: #7986CB;          /* 연한 인디고 (Soft Indigo) - 주 강조색 */
+    --secondary-color: #A1887F;        /* 따뜻한 브라운 (Warm Brown) - 보조색 */
+    --text-dark: #4A4A4A;              /* 부드러운 다크 그레이 텍스트 */
+    --text-light: #7B7B7B;             /* 중간 그레이 보조 텍스트 */
+    --bg-light: #F8F8F8;               /* 아주 밝은 회색 - 배경 */
+    --bg-white: #FFFFFF;               /* 순수한 흰색 - 카드/요소 배경 */
+    --border-color: #EAEAEA;           /* 아주 연한 경계선 */
+
+    /* 헤더/푸터 특정 색상 */
+    --header-bg: var(--bg-white);
+    --header-text: var(--text-dark);
+    --footer-bg: var(--bg-light);
+    --footer-text: var(--text-light);
+
+    /* 폰트 설정 - 친근하고 편안하게*/
+    --font-family-base: 'Quicksand', 'Noto Sans KR', sans-serif; 
+    --font-size-base: 1.05rem;
+    --line-height-base: 1.7;
+
+    /* 간격 및 여백 */
+    --spacing-sm: 15px;             
+    --spacing-md: 25px;           
+    --spacing-lg: 50px;             
+    --spacing-xl: 100px;               
+
+    /* 그림자 효과 - 은은하고 부드럽게 */
+    --box-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05); 
+    --box-shadow-md: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    /* 트랜지션 속성 */
+    --transition-speed: 0.4s;         
+    --transition-timing: ease-in-out;
+}
+
+
+/* 기본/재설정 스타일 (Reset/Base Styles) */
+
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    margin: 0; padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+*, *::before, *::after { box-sizing: border-box; }
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) var(--transition-timing);
+    /* 링크 밑줄을 없애거나 더 부드럽게 */
+    border-bottom: 1px dashed var(--primary-color); /* 점선 밑줄로 친근하게 */
+    padding-bottom: 2px;
+}
+a:hover {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+ul { list-style: none; padding: 0; margin: 0; }
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-base); /* 제목도 기본 폰트 사용 */
+    margin-top: 0; margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+    font-weight: 600; /* 제목 굵기 살짝 낮춤 */
+    text-transform: none; /* 대문자 해제 */
+    letter-spacing: normal; /* 자간 초기화 */
+}
+p { margin-top: 0; margin-bottom: var(--spacing-md); }
+
+/* 공통 유틸리티 클래스 (Utility Classes) */
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 var(--spacing-md); }
+.content-section { padding: var(--spacing-xl) 0; text-align: center; }
+.content-section.bg-light { background-color: var(--bg-white); }
+
+.cta-button, .submit-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: 25px; /* 아주 둥글게 (pill shape) */
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    transition: background-color var(--transition-speed) var(--transition-timing),
+                transform var(--transition-speed) var(--transition-timing),
+                box-shadow var(--transition-speed) var(--transition-timing);
+    text-transform: none; /* 대문자 해제 */
+    letter-spacing: normal; /* 자간 초기화 */
+    box-shadow: var(--box-shadow-sm); /* 부드러운 그림자 */
+}
+.cta-button:hover, .submit-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px); /* 좀 더 드라마틱한 호버 효과 */
+    box-shadow: var(--box-shadow-md); /* 호버 시 그림자 강조 */
+}
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: 8px; /* 포커스 아웃라인도 둥글게 */
+}
+
+
+/* 헤더 및 내비게이션 (Header & Navigation) */
+
+#main-header {
+    background-color: var(--header-bg);
+    padding: var(--spacing-md) 0;
+    box-shadow: var(--box-shadow-sm);
+    position: sticky; top: 0; z-index: 1000;
+}
+.header-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.site-logo a {
+    font-family: var(--font-family-base); /* 로고도 기본 폰트 사용 */
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--header-text);
+    border-bottom: none;
+}
+#main-nav .nav-list { display: flex; gap: var(--spacing-lg); }
+#main-nav .nav-item a {
+    font-weight: 500; /* 메뉴 폰트 굵기 살짝 낮춤 */
+    padding: 5px 0;
+    color: var(--header-text);
+    text-transform: none; /* 대문자 해제 */
+    letter-spacing: normal; /* 자간 초기화 */
+    border-bottom: none; /* 밑줄 제거 */
+}
+#main-nav .nav-item a:hover {
+    color: var(--primary-color);
+}
+
+
+/* 섹션별 레이아웃 (Section Layouts) */
+
+.hero-section {
+    background: linear-gradient(rgba(121,134,203,0.75), rgba(121,134,203,0.75)), url('https://via.placeholder.com/1920x1080/7986CB/F8F8F8?text=Cozy+Welcome') no-repeat center center/cover;
+    color: var(--bg-white);
+    padding: var(--spacing-xl) 0; min-height: 85vh;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.hero-section h2 { font-size: 3.5rem; margin-bottom: var(--spacing-sm); color: var(--bg-white); line-height: 1.2; }
+.hero-section p { font-size: 1.3rem; margin-bottom: var(--spacing-lg); max-width: 800px; margin-left: auto; margin-right: auto; }
+
+.about-grid, .services-grid, .portfolio-grid {
+    display: grid; gap: var(--spacing-lg); margin-top: var(--spacing-xl);
+}
+.about-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.about-item, .service-item, .portfolio-item, #contact-form {
+    background-color: var(--bg-white);
+    padding: var(--spacing-lg);
+    border-radius: 12px; /* 더 둥글게 */
+    box-shadow: var(--box-shadow-sm);
+    transition: transform var(--transition-speed) var(--transition-timing), box-shadow var(--transition-speed) var(--transition-timing);
+}
+.about-item:hover, .service-item:hover, .portfolio-item:hover {
+    transform: translateY(-8px); /* 호버 효과 강화 */
+    box-shadow: var(--box-shadow-md);
+}
+.about-item h3, .service-item h3 { color: var(--primary-color); margin-bottom: var(--spacing-sm); }
+
+.services-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.service-item { text-align: left; }
+
+.portfolio-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.portfolio-item img {
+    width: 100%; height: 260px;
+    object-fit: cover; display: block;
+    border-radius: 8px; /* 이미지도 둥글게 */
+    margin-bottom: var(--spacing-sm); /* 이미지 아래 여백 추가 */
+}
+.portfolio-item figcaption { padding: var(--spacing-sm); font-weight: 600; color: var(--text-dark); }
+
+#contact-form {
+    max-width: 700px; margin: var(--spacing-xl) auto 0;
+    text-align: left;
+}
+.form-group { margin-bottom: var(--spacing-md); }
+.form-group label { display: block; margin-bottom: var(--spacing-sm); font-weight: 600; color: var(--text-dark); }
+.form-group input[type="text"], .form-group input[type="email"], .form-group textarea {
+    width: 100%; padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* 입력 필드도 둥글게 */
+    font-size: var(--font-size-base); color: var(--text-dark);
+    background-color: var(--bg-white);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+/* 푸터 스타일링 (Footer Styling) */
+
+#main-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: var(--spacing-md) 0;
+    text-align: center; font-size: 0.9rem;
+}
+#main-footer p { margin-bottom: 0; }
+
+
+/* 반응형 디자인 (Responsive Design) */
+
+@media (min-width: 768px) {
+    .container { padding: 0 var(--spacing-lg); }
+    #main-header { padding: var(--spacing-md) 0; }
+    .hero-section { min-height: 90vh; }
+    .hero-section h2 { font-size: 4.2rem; }
+    .header-container { flex-direction: row; text-align: left; }
+    #main-nav .nav-list { flex-direction: row; margin-top: 0; justify-content: flex-end; }
+}
+@media (min-width: 1024px) {
+    .hero-section h2 { font-size: 5rem; }
+}
+@media print {
+    #main-header, #main-nav, #contact-form, .cta-button, .submit-button, #main-footer { display: none; }
+    body { background-color: #fff; color: #000; }
+    .content-section { padding: 20px 0; }
+}

@@ -19,6 +19,12 @@
                     <li class="nav-item"><a href="#contact">연락처</a></li>
                 </ul>
             </nav>
+            <div class="hero-image">
+                    <div class="profile-image" onclick="">
+                        👨🏼‍💻
+                    </div>
+                </div>
+            
         </div>
     </header>
 
@@ -59,7 +65,7 @@
                     </article>
                     <article class="service-item">
                         <h3>CSS 디자인</h3>
-                        <p>인터페이스 디자인</p>
+                        <p>사용자 친화적인 인터페이스 디자인</p>
                     </article>
                 </div>
             </div>

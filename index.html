@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지성현의 포트폴리오</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">포트폴리오</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <img src="images/증명사진.jpg" alt="프로필 사진" class="profile-img'">
+                <h1>신입 개발자 지성현입니다.</h1>
+                <p>열정과 끊임없는 학습으로 성장하는 백엔드 개발자를 꿈꿉니다.</p>
+            </div>
+        </section>
+
+        <section id="about" class="about-me section-padding">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>끊임없이 함께 성장하려는 열망을 지닌 개발자입니다. 단순히 기술적 구현에 만족하기보다, 문제를 깊게 이해하고, 치밀하게 분석하는 과정을 통해 해답을 찾아가겠습니다.</p>
+                <p>항상 "왜" 라는 질문을 던지며 스스로의 성장을 이끌고, 이 과정 속 얻은 통찰을 꾸준히 기록하며 공유하여 함께 배우고 성장하는 문화를 지향하겠습니다.</p>
+                <p>피드백과 의견을 적극적으로 수용하며, 같은 문제를 다각도에서 바라보는것에 흥미를 느낍니다. 성실함과 끈기로 축적한 지식을 바탕으로, 새로운 기술과 환경 변화에 능동적으로 대응하며 더 넓은 세상과 연결되기 위해 끊임없이 소통하고 기록하겠습니다.</p>
+            </div>
+        </section>
+
+       <section id="skills" class="skills-section section-padding">
+    <h2>Skills & Tools</h2>
+    <div class="skills-grid four-columns">
+        
+        <div class="skill-group-item">
+            <h3>Backend</h3>
+            <ul class="skill-list">
+                <li>Java</li>
+                <li>Spring Boot</li>
+                <li>Spring</li> 
+            </ul>
+        </div>
+
+        <div class="skill-group-item">
+            <h3>Frontend</h3>
+            <ul class="skill-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Bootstrap</li>
+                <li>Thymeleaf</li>
+                <li>React</li>
+            </ul>
+        </div>
+
+        <div class="skill-group-item">
+            <h3>DB</h3>
+            <ul class="skill-list">
+                <li>MySQL</li>
+                <li>H2Database</li>
+                <li>Oracle</li>
+            </ul>
+        </div>
+
+        <div class="skill-group-item">
+            <h3>ETC</h3>
+            <ul class="skill-list">
+                <li>Notion</li>
+                <li>git</li>
+                <li>Discord</li>
+                <li>Slack</li>
+            </ul>
+        </div>
+        
+    </div>
+<section id="projects" class="projects-section section-padding">
+    <h2>My Projects</h2>
+    
+   <div class="project-detail-card">
+    <div class="project-header">
+        <h3>TodoList 서비스</h3>
+        <div class="project-summary-box">
+            <h4>개요</h4>
+            <p>개인 일정 관리를 위해 개발한 웹 기반 투두리스트 애플리케이션입니다.</p>
+            <ul>
+                <li><strong>프로젝트 명:</strong>TodoList</li>
+                <li><strong>개발 인원:</strong> 5명 (팀 프로젝트)</li>
+                <li><strong>개발 기간:</strong> 2025.08.13 ~ 2025.08.30</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="project-content-area">
+        <div class="project-media">
+            <img src="images/todo 로고.png" alt="투두리스트 프로젝트 썸네일" class="project-main-image">
+            <div class="project-stack-tags">
+                <span>Spring Framework</span>
+                <span>java</span>
+                <span>Mysql</span>
+                <span>Thymeleaf</span>
+                <span>AWS EC2</span>
+                <span>JDBCTemplate</span>
+            </div>
+        </div>
+        
+        <div class="project-description">
+            <div class="description-section">
+                <h4>[나의 주요 역할]</h4>
+                <p>저는 프로젝트의 핵심인 사용자 인증 (로그인) 및 데이터 단일 조회 기능의 구현 및 테스트를 담당했습니다.</p>
+                <ul>
+                    <li>로그인 기능 구현: 로그인 View(Thymeleaf), Controller, UserService(`findUserById`), UserDAO(`selectUserById`)에 걸친 전체 흐름을 구현했습니다.</li>
+                    <li>세션/권한 관리: 로그인 성공 시 세션 생성 로직을 처리하여 인가(Authorization)의 기초를 마련하고, 로그인 여부에 따른 접근 권한 제어를 담당했습니다.</li>
+                    <li>단일 Todo 조회: ReadTodo(상세 조회) 기능을 구현하여 본인 Todo만 열람 가능하도록 Service 계층에서 접근 권한 로직을 처리했습니다.</li>
+                    <li>테스트 주도 개발: 구현한 모든 기능에 대해 단위 테스트 및 통합 테스트를 선행/병행하며 코드 신뢰도를 확보했습니다.</li>
+                </ul>
+            </div>
+
+            <div class="description-section">
+                <h4>[트러블 슈팅]</h4>
+                <p>로그인 및 조회 기능을 구현하는 과정에서, UserService가 UserDAO에 직접 의존하는 구조로 인해 단위 테스트가 어려워지는 문제가 발생했습니다.</p>
+                <ul>
+                    <li>문제 발생: UserDAO를 Mocking 없이 테스트하기 때문에 DB 설정이 불안정하거나 변경될 때마다 UserService의 테스트가 실패하는 결합도 문제가 발생했습니다.</li>
+                    <li>해결 방안 (SOLID 적용): 의존성 역전 원칙(DIP)에 따라 UserService가 구체적인 UserDAO 클래스가 아닌, UserDAO 인터페이스에 의존하도록 구조를 변경했습니다.</li>
+                    <li>결과: UserService의 로직(비즈니스 로직)과 UserDAO의 DB 접근 방식이 분리되어, Mockito를 사용하여 DAO의 동작을 모킹(Mocking)할 수 있게 되었고, DB 없이 UserService의 순수 단위 테스트를 성공적으로 확립했습니다.</li>
+                </ul>
+            </div>
+
+            <div class="description-section">
+                <h4>[성과 및 배운 점]</h4>
+                <p>본 프로젝트를 통해 견고한 백엔드 구현 역량과 신입 개발자로서 갖춰야 할 설계 원칙 및 테스트 방법론을 체계적으로 습득했습니다.</p>
+                <ul>
+                    <li>SOLID 원칙 및 테스트 역량 강화: 의존성 역전 원칙을 적용한 트러블 슈팅 경험을 통해, 이론적 설계 원칙이 실제 코드 품질과 테스트 용이성에 미치는 영향을 깊이 있게 이해했습니다. 이를 통해 UserService의 순수 단위 테스트 환경을 확립하며, 재사용 가능하고 유지보수가 쉬운 코드를 작성하는 방법을 배웠습니다.</li>
+                    <li>인증/인가 흐름 및 3-Tier 이해: 로그인 성공 시 세션 생성 및 본인 Todo만 열람 가능하도록 권한을 제어하는 로직을 직접 구현하며, Controller-Service-DAO로 이어지는 3-Tier 아키텍처 내에서 사용자 인증과 인가 흐름을 명확히 체화했습니다.</li>
+                    <li>결론: 단순 기능 구현을 넘어, 테스트 커버리지와 코드 품질을 최우선으로 생각하는 개발자로 성장할 수 있는 기반을 다진 프로젝트입니다.</li>
+                </ul>
+            </div>
+            
+            <div class="project-links">
+                <a href="https://github.com/ziogenorwekh/todolist" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="project-detail-card">
+        <div class="project-header">
+            <h3>스터디룸 예약 시스템</h3>
+            <div class="project-summary-box">
+                <h4>개요</h4>
+                <p>사용자들이 스터디룸을 검색하여 카카오맵어플로 스터디룸을 찾아 편리하게 예약하고,리뷰를 쓸수 있고,사용자끼리 게시판도 이용할수도 있습니다.</p>
+                <ul> 
+                    <li><strong>프로젝트 명:</strong> Studyroom-reserve-system</li>
+                    <li><strong>개발 인원:</strong> 8명 (팀 프로젝트)</li>
+                    <li><strong>개발 기간:</strong> 2025.09.26 ~ 2023.10.30</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-content-area">
+        <div class="project-media">
+            <img src="images/스터디룸예약2.png" alt="스터디룸예약시스템 프로젝트 썸네일" class="project-main-image">
+            <div class="project-stack-tags">
+                <span>Spring Framework</span>
+                <span>java</span>
+                <span>Mysql</span>
+                <span>Thymeleaf</span>
+                <span>AWS EC2</span>
+                <span>JPA</span>
+            </div>
+        </div>
+
+       <div class="project-description">
+            <div class="description-section">
+                <h4>[나의 주요 역활]</h4>
+                <p>저는 사용자 인증 흐름, 커뮤니티(리뷰) 기능의 백엔드 로직, 그리고 예약 데이터 조회 파트를 담당하며 시스템의 안정성과 기능 구현의 완성도를 높이는 데 집중했습니다.</p>
+                <p>특히, Spring Security와 JPA를 통합하여 회원가입/로그인/로그아웃 기능 및 세션 관리를 구현했습니다. 인증 성공 시 세션을 생성하고, **단일 예약 및 리뷰 조회 시 해당 사용자의 접근 권한을 Service 계층에서 검증하는 로직을 담당하여 인가(Authorization)의 기초를 다졌습니다.</p>
+                <p>또한, 리뷰 작성/수정/삭제/신고 기능은 UML 다이어그램에 명시된 `ReviewController` - `ReviewService` - `ReviewRepository`의 명확한 요청 흐름에 따라 구현되었으며, 특히 신고 및 삭제 시 권한 검증 로직을 포함했습니다.</p>
+            </div>
+
+            <div class="description-section">
+                <h4>[트러블 슈팅]</h4>
+                <p>JPA 환경에서 Spring Security의 사용자 인증을 구현하는 과정에서 트러블 슈팅이 필요했습니다. `UserDetailsService`가 데이터베이스에서 조회한 `UserEntity`와 Spring Security가 요구하는 `UserDetails` 객체 간의 변환 및 매핑에서 문제가 발생했습니다.</p>
+                <p>문제의 본질은 JPA 엔티티를 직접 보안 컨텍스트에 사용할 경우 발생할 수 있는 데이터 불일치 및 영속성 컨텍스트 침범 문제였습니다.</p>
+                <p>해결 방법으로, `UserDetailsService`를 커스터마이징하고, `UserEntity`를 조회한 후에는 `UserDetails` 인터페이스를 구현하는 별도의 DTO 객체로 변환하여 Spring Security 컨텍스트에 저장하도록 구조를 변경했습니다. 이 해결책을 통해 JPA의 설계 원칙을 준수**하면서도 보안 프레임워크의 요구사항을 만족시키는 안정적인 인증 시스템을 구축할 수 있었습니다.</p>
+            </div>
+
+            <div class="description-section">
+                <h4>[기술적 결정 및 성과]</h4>
+                <p>이 프로젝트를 통해 객체지향 설계와 최신 프레임워크 활용 역량을 효과적으로 키웠습니다.</p>
+                <p>이전 프로젝트의 JDBCTemplate 방식 대신 JPA를 도입하여 엔티티 설계와 객체-관계 매핑(ORM)에 대한 깊은 이해를 얻었습니다. 이로써 SQL 작성 대신 엔티티 관계 중심으로 데이터 로직을 처리하는 현대적인 개발 생산성을 체감했습니다.</p>
+                <p>또한, UML 다이어그램을 기반으로 개발을 진행하여 Controller-Service-Repository의 계층 구조 및 역할 분리를 철저히 지켰습니다. 이는 코드를 읽기 쉽고, 유지보수가 용이하며, 향후 기능 확장이 용이한 구조적 사고방식을 체화하는 데 결정적인 도움이 되었습니다.</p>
+            </div>
+                
+                <div class="project-links">
+                    <a href="https://github.com/ziogenorwekh/study-room-reservation-service-system" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+        <section id="contact" class="contact-section section-padding">
+            <h2>Contact Me</h2>
+            <p>이쪽으로 연락주시면 감사하겠습니다.</p>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i>j_sh01@naver.com</a>
+                <h3>010-7417-6339</h4>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>end</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

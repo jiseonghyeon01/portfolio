@@ -1,0 +1,644 @@
+/* Google Fonts - Noto Sans KR 사용 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #3498db; /* 메인 강조 색상 */
+    --secondary-color: #2c3e50; /* 어두운 색상 (푸터, 네비바 등) */
+    --text-color: #333;
+    --light-gray: #f4f4f4;
+    --dark-gray: #777;
+    --white: #fff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    scroll-behavior: smooth; /* 부드러운 스크롤 */
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--white);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/random/1600x900/?coding,tech') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 20px 20px; /* 상하 패딩도 조금 줄였습니다. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh; /* ⬅️ 이 부분을 80vh에서 55vh로 변경 */
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: #2980b9; /* primary-color의 살짝 어두운 버전 */
+}
+
+/* General Section Styling */
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    margin-bottom: 40px;
+    box-shadow: var(--box-shadow);
+}
+
+/* About Me */
+.about-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0 50px;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    padding: 0 50px;
+}
+
+.skill-item {
+    text-align: center;
+    background-color: var(--light-gray);
+    padding: 20px 10px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.skill-item span {
+    display: block;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+/* Skills Section - 4분할 그룹 레이아웃을 위한 스타일 */
+.skills-grid.four-columns {
+    display: grid;
+    /* 4개의 컬럼을 동일한 너비로 배치 */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+    padding: 0 50px; /* 좌우 여백 */
+    text-align: center;
+}
+
+/* 개별 스킬 그룹 아이템 스타일 */
+.skill-group-item {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.skill-group-item:hover {
+    transform: translateY(-5px); /* 호버 시 약간 떠오르는 효과 */
+}
+
+/* 그룹 제목 (Backend, Frontend 등) */
+.skill-group-item h3 {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color); /* 구분선 추가 */
+}
+
+/* 스킬 목록 스타일 */
+.skill-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-list li {
+    font-size: 1rem;
+    padding: 5px 0;
+    color: var(--text-color);
+}
+
+/* Projects Section (개별 프로젝트 상세 카드 스타일) */
+.projects-section {
+    padding-bottom: 80px; /* 푸터와의 간격 확보 */
+}
+
+/* 개별 프로젝트 상세 카드 컨테이너 */
+.project-detail-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 60px; /* 프로젝트 카드 간 간격 */
+    overflow: hidden;
+    padding: 30px;
+    border: 1px solid var(--light-gray);
+}
+
+/* 프로젝트 헤더 (제목 및 개요 박스) */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* 반응형 */
+    gap: 20px;
+}
+
+.project-header h3 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin: 0;
+    flex: 1 1 auto; /* 제목이 공간을 유연하게 차지 */
+    min-width: 250px;
+}
+
+/* 프로젝트 개요 박스 */
+.project-summary-box {
+    background-color: var(--light-gray);
+    padding: 20px 25px;
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    flex: 0 1 350px; /* 개요 박스 최대 너비 고정 */
+}
+
+.project-summary-box h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 8px;
+}
+
+.project-summary-box p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+}
+
+.project-summary-box ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+}
+
+.project-summary-box ul li {
+    margin-bottom: 5px;
+}
+
+
+/* 프로젝트 내용 영역 (이미지 + 설명) */
+.project-content-area {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* 반응형 */
+}
+
+.project-media {
+    flex: 1 1 40%; /* 이미지 영역 */
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-main-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain; /* 이미지가 잘리지 않도록 */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+/* 프로젝트 기술 스택 태그 */
+.project-stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.project-stack-tags span {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* 프로젝트 상세 설명 영역 */
+.project-description {
+    flex: 1 1 50%; /* 설명 영역 */
+    min-width: 300px;
+}
+
+.description-section {
+    margin-bottom: 30px;
+}
+
+.description-section h4 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.description-section h4::before {
+    content: '▶'; /* 아이콘이나 화살표 추가 */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: var(--primary-color);
+}
+
+.description-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+.description-section ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--dark-gray);
+}
+
+.description-section ul li {
+    margin-bottom: 5px;
+}
+
+/* 프로젝트 링크 (GitHub, Demo) */
+.project-links {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-gray);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+    background-color: #2980b9;
+}
+
+.project-links a i {
+    font-size: 1.2rem;
+}
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .project-detail-card {
+        padding: 20px;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-header h3 {
+        font-size: 1.8rem;
+    }
+
+    .project-summary-box {
+        flex: 1 1 100%; /* 모바일에서 전체 너비 차지 */
+        padding: 15px;
+    }
+
+    .project-content-area {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project-media, .project-description {
+        flex: 1 1 100%; /* 모바일에서 전체 너비 차지 */
+        min-width: unset;
+    }
+    
+    .project-main-image {
+        max-height: 300px;
+    }
+
+    .project-description h4 {
+        font-size: 1.3rem;
+        padding-left: 0;
+        text-align: center;
+    }
+    .description-section h4::before {
+        content: none; /* 모바일에서는 아이콘 제거 */
+    }
+
+    .project-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-description h4 {
+        font-size: 1.2rem;
+    }
+
+    .project-links a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+}
+
+.contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: var(--primary-color);
+}
+
+.contact-links i {
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .about-content {
+        padding: 0 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        padding: 0 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* 모바일에서는 한 줄에 하나 */
+        padding: 0 20px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        margin: 0 8px;
+        font-size: 0.9rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .about-content {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 992px) {
+    /* 화면이 작아지면 2열로 변경 */
+    .skills-grid.four-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* 모바일에서는 1열로 변경 */
+    .skills-grid.four-columns {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+}
